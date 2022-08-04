@@ -1,49 +1,62 @@
-import React from 'react'
+import React from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BiBed, BiBath, BiArea } from "react-icons/bi";
 
-function Houses({house}) {
+function Houses({ house }) {
   return (
-    <div className=''>
-        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow-md ">
+    <div className="">
+      <div class="max-w-sm rounded-lg bg-white shadow-md hover:shadow-xl">
         <a href="/">
-          <img
-            class="rounded-t-lg"
-            src={house.image}
-            alt=""
-          />
+          <img class="rounded-t-lg  " src={house.image} alt={house.title} />
         </a>
-        <div class="p-5">
+        <div className="flex justify-between px-5 pt-3">
+          <h5 class="mb-2 text-xl font-bold tracking-tight text-purple-700 ">
+            ${house.price}
+            <span className=" text-sm font-normal text-gray-500">/month</span>
+          </h5>
+          <span className=" flex h-10 w-10 items-center justify-center  rounded-full border border-purple-700 text-xl text-purple-800 ">
+            <AiOutlineHeart />
+          </span>
+        </div>
+        <div class="space-y-4  px-5 ">
           <a href="/">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-            {house.country}
+              {house.title}
             </h5>
           </a>
-          <p class="mb-3 font-normal text-gray-700 ">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
-          </p>
-          <a
-            href="/"
-            class="inline-flex items-center rounded-lg bg-blue-700 py-2 px-3 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Read more
-            <svg
-              aria-hidden="true"
-              class="ml-2 -mr-1 h-4 w-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </a>
+        </div>
+        <div className="divide-y-2 px-5">
+          <p class="mb-3 font-normal text-gray-700   ">{house.address}</p>
+          <div className="flex flex-wrap justify-between pt-3">
+            <p class="flex items-center py-4  ">
+              <span className=" text-purple-800 ">
+                <BiBed />
+              </span>
+              <span className="px-1 text-sm text-gray-700">
+                {house.bedrooms} Beds
+              </span>
+            </p>
+            <p class="flex items-center py-4  ">
+              <span className=" text-purple-800 ">
+                <BiBath />
+              </span>
+              <span className="px-1 text-sm text-gray-700">
+                {house.bathrooms} Bathrooms
+              </span>
+            </p>
+            <p class=" flex items-center py-4  ">
+              <span className=" text-purple-800 ">
+                <BiArea />
+              </span>
+              <span className="px-1 text-sm text-gray-700">
+                {house.surface}
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Houses
+export default Houses;

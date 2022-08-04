@@ -20,7 +20,7 @@ const Search = () => {
           {" "}
           Search properties to rent
         </p>
-        <div className="relative divide-x  flex flex-col bg-white  gap-4 rounded-lg  px-8 py-6 lg:-top-4  lg:flex-row  lg:gap-x-3">
+        <div className="relative divide-x  flex flex-col bg-white shadow-md  gap-4 rounded-lg px-8 py-2 lg:-top-4  lg:flex-row  lg:gap-x-3">
           <CountryDropdown />
           <Date/>
           <PriceRangeDropdown />

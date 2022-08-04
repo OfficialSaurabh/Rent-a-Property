@@ -14,10 +14,9 @@ import { HouseContext } from '../context/HouseContext';
 const PriceRangeDropdown = () => {
   const { price, setPrice } = useContext(HouseContext);
   const [isOpen, setIsOpen] = useState(false);
-
   const prices = [
     {
-      value: 'Select All',
+      value: 'All Range',
     },
     {
       value: '100000 - 130000',
