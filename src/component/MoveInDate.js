@@ -9,14 +9,14 @@ import { HouseContext } from '../context/HouseContext';
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 function Date() {
-  const [dateRange, setDateRange] = useState([],[]);
+  const {setDate, date} = useContext(HouseContext)
   // const [dateRange, setDateRange] = useContext(HouseContext);
   // const [movein, setmovein] = useContext(HouseContext);
   //  const [movein, setmovein] = useState([]);
   //  console.log(movein)
-  const [startDate, endDate] = dateRange;
+  const [startDate, endDate] = date;
  
-  // console.log(dateRange)
+  // console.log(startDate, endDate)
 
   return (
     <div className="dropdown-btn text-left">
@@ -32,7 +32,7 @@ function Date() {
           startDate={startDate}
           endDate={endDate}
           onChange={update => {
-            setDateRange(update);
+            setDate(update);
             // setmovein(update);
           }}
           // onClick={() => setmovein(dateRange)}
