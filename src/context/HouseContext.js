@@ -6,7 +6,9 @@ import { housesData } from "../data";
 export const HouseContext = createContext();
 
 const HouseContextProvider = ({ children }) => {
+  //get all data from data.js
   const [houses, setHouses] = useState(housesData);
+  
   const [country, setCountry] = useState(" All Location ");
   const [countries, setCountries] = useState([]);
   const [property, setProperty] = useState("All Type");
@@ -14,7 +16,7 @@ const HouseContextProvider = ({ children }) => {
   const [price, setPrice] = useState(" All Range");
   const [loading, setLoading] = useState(false);
   const [date, setdate] = useState([]);
-  const [dateRange, setDateRange] = useState([],[]);
+  
 
   useEffect(() => {
     const allDate = houses.map(house => {
@@ -22,15 +24,15 @@ const HouseContextProvider = ({ children }) => {
     });
 
     setdate(allDate);
-    
+    console.log(allDate);
   }, []);
-  console.log(dateRange)
- 
-    const startDate = Date.parse(date[0]);
-    const endDate = Date.parse(date[1]);
 
-    console.log(startDate);
-    console.log(endDate)
+ 
+    // const startDate = Date.parse(date[0]);
+    // const endDate = Date.parse(date[1]);
+
+    // console.log(startDate);
+    // console.log(endDate)
     
 
   useEffect(() => {
@@ -125,6 +127,7 @@ const HouseContextProvider = ({ children }) => {
         handleClick,
         houses,
         loading,
+
       }}
     >
       {children}

@@ -11,7 +11,11 @@ import { HouseContext } from '../context/HouseContext';
 function Date() {
   const [dateRange, setDateRange] = useState([],[]);
   // const [dateRange, setDateRange] = useContext(HouseContext);
+  // const [movein, setmovein] = useContext(HouseContext);
+  //  const [movein, setmovein] = useState([]);
+  //  console.log(movein)
   const [startDate, endDate] = dateRange;
+ 
   // console.log(dateRange)
 
   return (
@@ -29,7 +33,9 @@ function Date() {
           endDate={endDate}
           onChange={update => {
             setDateRange(update);
+            // setmovein(update);
           }}
+          // onClick={() => setmovein(dateRange)}
         />
       </div>
     </div>

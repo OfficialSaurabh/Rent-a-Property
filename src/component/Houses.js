@@ -1,16 +1,23 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiBed, BiBath, BiArea } from "react-icons/bi";
+import { BsStars, BsTriangleFill } from "react-icons/bs";
+// import { VscTriangleDown } from "react-icons/vs";
 
 function Houses({ house }) {
   return (
     <div className="">
-      <div class="max-w-sm rounded-lg bg-white shadow-md hover:shadow-xl">
-        <a href="/">
-          <img class="rounded-t-lg  " src={house.image} alt={house.title} />
+      <div className="relative max-w-sm rounded-lg bg-white shadow-md hover:shadow-xl">
+        <a href="/" className="">
+          <img className="rounded-t-lg  " src={house.image} alt={house.title} />
         </a>
-        <div className="flex justify-between px-5 pt-3">
-          <h5 class="mb-2 text-xl font-bold tracking-tight text-purple-700 ">
+        <div className=" absolute z-10 -mt-5 -ml-3 flex  items-center gap-x-1 rounded-tl-lg rounded-tr-md rounded-br-lg bg-purple-700 py-1 px-7 text-white ">
+          {" "}
+          <BsStars /> POPULAR
+        </div>
+        <BsTriangleFill className=" absolute  -ml-2.5 rotate-12  text-purple-900" />
+        <div className="flex justify-between px-5 pt-8">
+          <h5 className="mb-2 text-xl font-bold tracking-tight text-purple-700 ">
             ${house.price}
             <span className=" text-sm font-normal text-gray-500">/month</span>
           </h5>
@@ -18,17 +25,17 @@ function Houses({ house }) {
             <AiOutlineHeart />
           </span>
         </div>
-        <div class="space-y-4  px-5 ">
+        <div className="space-y-4  px-5 ">
           <a href="/">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
               {house.title}
             </h5>
           </a>
         </div>
         <div className="divide-y-2 px-5">
-          <p class="mb-3 font-normal text-gray-700   ">{house.address}</p>
+          <p className="mb-3 font-normal text-gray-700   ">{house.address}</p>
           <div className="flex flex-wrap justify-between pt-3">
-            <p class="flex items-center py-4  ">
+            <p className="flex items-center py-4  ">
               <span className=" text-purple-800 ">
                 <BiBed />
               </span>
@@ -36,7 +43,7 @@ function Houses({ house }) {
                 {house.bedrooms} Beds
               </span>
             </p>
-            <p class="flex items-center py-4  ">
+            <p className="flex items-center py-4  ">
               <span className=" text-purple-800 ">
                 <BiBath />
               </span>
@@ -44,7 +51,7 @@ function Houses({ house }) {
                 {house.bathrooms} Bathrooms
               </span>
             </p>
-            <p class=" flex items-center py-4  ">
+            <p className=" flex items-center py-4  ">
               <span className=" text-purple-800 ">
                 <BiArea />
               </span>

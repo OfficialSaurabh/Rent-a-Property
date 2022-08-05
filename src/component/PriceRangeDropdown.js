@@ -1,12 +1,10 @@
 import React, { useState,  useContext } from 'react';
 
-// import icons
 import {
   RiWallet3Line,
   RiArrowDownSLine,
   RiArrowUpSLine,
 } from 'react-icons/ri';
-// import headless ui components
 import { Menu } from '@headlessui/react';
 // import context
 import { HouseContext } from '../context/HouseContext';

@@ -3,6 +3,7 @@ import Houses from "./component/Houses";
 import { HouseContext } from "./context/HouseContext";
 import { ImSpinner2 } from "react-icons/im";
 
+
 function Home() {
   const { houses, loading } = useContext(HouseContext);
 
@@ -23,13 +24,12 @@ function Home() {
   return (
     <section className="bg-gray-100 pb-20">
       <div className="container mx-auto w-3/4 justify-center ">
-        
-        <div className="grid pt-8 justify-center gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-14 ">
+        <div className="grid justify-center gap-4 pt-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-14 ">
           {houses.map((house, index) => {
-            return <Houses house={house} />;
+            return <Houses house={house} key={index} />;
           })}
         </div>
-      </div>
+      </div> 
     </section>
   );
 }

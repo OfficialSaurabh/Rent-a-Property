@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 // import { a } from "react-router-dom";
 import { BiBuildingHouse} from "react-icons/bi";
-
+import NavLinkDropdown from "./ManagePropertyDropdown";
+ import ResourceDropdown from "./ResourceDropdown";
 
 
 function NavBar() {
@@ -10,7 +11,7 @@ function NavBar() {
   return (
     <div className="sticky top-0 z-50 ">
       <nav className="bg-white ">
-        <div className="mx-auto  px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto  px-4 sm:px-6 md:px-8">
           <div className="flex h-16 items-center  justify-between ">
             <div className="flex items-center justify-end ">
               <div className="flex space-x-3">
@@ -20,7 +21,7 @@ function NavBar() {
                 </span>
               </div>
               <div className="hidden md:block ">
-                <div className="ml-10 flex items-baseline justify-between space-x-4 text-gray-900 ">
+                <div className="ml-10 flex items-baseline justify-between space-x-5 text-gray-900 ">
                   
                     <a
                       href="/"
@@ -40,6 +41,13 @@ function NavBar() {
                     >
                       Sell
                     </a>
+                    <div>
+                    <NavLinkDropdown />
+                    </div>
+                    <div>
+                    <ResourceDropdown/>
+                    </div>
+                   
                     
                  
                 </div>
@@ -48,13 +56,13 @@ function NavBar() {
             <div className="hidden md:block ">
             <button
               type="button"
-              class="mr-2 mb-2 rounded-lg outline outline-purple-400 outline-1 px-5 py-2.5 text-sm font-medium text-purple-700 hover:bg-purple-200  "
+              className="mr-2 mb-2 rounded-lg outline outline-purple-400 outline-1 px-5 py-2.5 text-sm font-medium text-purple-700 hover:bg-purple-200  "
             >
               Login
             </button>
             <button
               type="button"
-              class="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
+              className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
             >
               Sign Up
             </button>
@@ -120,7 +128,7 @@ function NavBar() {
           leavehref="opacity-0 scale-95"
         >
           {ref => (
-            <div className="md:hidden" id="mobile-menu">
+            <div className="" id="mobile-menu">
               <div
                 ref={ref}
                 className="space-y-1 px-2 pt-2 pb-3 text-gray-900 sm:px-3"
@@ -141,21 +149,27 @@ function NavBar() {
 
                 <a
                   href="/"
-                  className="block rounded-md px-3 py-2 text-base font-medium  hover:bg-purple-200 hover:text-purple-700"
+                  className="block  rounded-md px-3 py-2 text-base font-medium  hover:bg-purple-200 hover:text-purple-700"
                 >
                   Sell
                 </a>
+                <a href="/">
+                    <NavLinkDropdown />
+                    </a>
+                    <a href="/">
+                    <ResourceDropdown/>
+                    </a>
               </div>
-              <div className=" px-5">
+              <div className=" px-5  md:hidden  ">
               <button
               type="button"
-              class="mr-2 mb-2 rounded-lg outline outline-purple-400 outline-1 px-5 py-2.5 text-sm font-medium text-purple-700 hover:bg-purple-200  "
+              className="mr-2 mb-2 rounded-lg outline outline-purple-400 outline-1 px-5 py-2.5 text-sm font-medium text-purple-700 hover:bg-purple-200  "
             >
               Login
             </button>
             <button
               type="button"
-              class="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
+              className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
             >
               Sign Up
             </button>
