@@ -34,7 +34,7 @@ const PropertyDropdown = () => {
               as="li"
               onClick={() => setProperty(property)}
               key={index}
-              className="cursor-pointer transition hover:text-violet-700"
+              className="cursor-pointer transition hover:text-purple-800"
             >
               {property}
             </Menu.Item>

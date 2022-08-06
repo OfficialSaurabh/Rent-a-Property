@@ -53,7 +53,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '4200 sq ft',
-    date: '25/08/2022',
+    date: '30 Aug 2022',
     price: '200000',
   },
   {
@@ -67,7 +67,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '3',
     surface: '4200 sq ft',
-    date: '29/08/2022',
+    date: '02 Sep 2022',
     price: '210000',
   },
   {
@@ -81,7 +81,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '6200 sq ft',
-    date: '05/09/2022',
+    date: '09 Sep 2022',
     price: '220000',
   },
   {
@@ -95,7 +95,7 @@ export const housesData = [
     bedrooms: '2',
     bathrooms: '1',
     surface: '1200 sq ft',
-    date: '10/09/2022',
+    date: '17 Sep 2022',
     price: '20000',
   },
   {
@@ -109,7 +109,7 @@ export const housesData = [
     bedrooms: '3',
     bathrooms: '1',
     surface: '1000 sq ft',
-    date: '18/09/2022',
+    date: '27 Sep 2022',
     price: '30000',
   },
   {
@@ -123,7 +123,7 @@ export const housesData = [
     bedrooms: '2',
     bathrooms: '1',
     surface: '1100 sq ft',
-    date: '24/09/2022',
+    date: '30 Sep 2022',
     price: '40000',
   },
   {
@@ -137,7 +137,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '3',
     surface: '3200 sq ft',
-    date: '30/09/2022',
+    date: '02 Oct 2022',
     price: '117000',
   },
   {
@@ -151,7 +151,7 @@ export const housesData = [
     bedrooms: '7',
     bathrooms: '2',
     surface: '2200 sq ft',
-    date: '05/10/2022',
+    date: '10 Oct 2022',
     price: '145000',
   },
   {
@@ -165,7 +165,7 @@ export const housesData = [
     bedrooms: '4',
     bathrooms: '4',
     surface: '4600 sq ft',
-    date: '14/10/2022',
+    date: '15 Oct 2022',
     price: '139000',
   },
   {
@@ -179,7 +179,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '2',
     surface: '5200 sq ft',
-    date: '22/10/2022',
+    date: '23 Oct 2022',
     price: '180000',
   },
   {
@@ -193,7 +193,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '2',
     surface: '3200 sq ft',
-    date: '27/10/2022',
+    date: '28 Oct 2022',
     price: '213000',
   },
   {
@@ -207,7 +207,7 @@ export const housesData = [
     bedrooms: '4',
     bathrooms: '3',
     surface: '5200 sq ft',
-    date: '1/11/2022',
+    date: '18 Oct 2022',
     price: '221000',
   },
   {
@@ -221,7 +221,7 @@ export const housesData = [
     bedrooms: '2',
     bathrooms: '1',
     surface: '1300 sq ft',
-    date: '07/11/2022',
+    date: '07 Nov 2022',
     price: '21000',
   },
   {
@@ -235,21 +235,21 @@ export const housesData = [
     bedrooms: '3',
     bathrooms: '1',
     surface: '1000 sq ft',
-    date: '14/11/2022',
+    date: '14 Nov 2022',
     price: '32000',
   },
   {
     id: 18,
     type: 'Apartament',
     name: 'Apartament 18',
-    title:"Primrose Cottage ",
+    title:" Cottage ",
     image: "img/apartments/a6.png",
     country: 'Canada',
     address: '84 Woodland St. Cocoa, FL 32927',
     bedrooms: '3',
     bathrooms: '1',
     surface: '1200 sq ft',
-    date: '23/11/2022',
+    date: '20 Nov 2022',
     price: '38000',
   },
 ];

@@ -4,7 +4,7 @@
 @layer base {
     
     .dropdown {
-      @apply w-full lg:max-w-[296px]  cursor-pointer divide-x;
+      @apply w-full lg:max-w-[296px]  cursor-pointer divide-x xl:z-20 lg:z-20;
     }
     .dropdown-btn {
       @apply flex  h-16 items-center px-5 rounded-lg;

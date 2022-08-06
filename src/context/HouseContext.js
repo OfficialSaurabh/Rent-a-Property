@@ -5,6 +5,53 @@ import { housesData } from "../data";
 
 export const HouseContext = createContext();
 
+function validCondition(isDefault, first, second, filterData, condition) {
+  if (!isDefault(filterData)) {
+    return condition(first, second);
+  } else {
+    return true;
+  }
+}
+function validCondition2(
+  isDefault,
+  first,
+  second,
+  third,
+  filterData,
+  condition
+) {
+  if (!isDefault(filterData)) {
+    console.log(condition(first, second, third));
+    return condition(first, second, third);
+  } else {
+    return true;
+  }
+}
+
+function validDateCondition(isDefault, first, second, third, condition) {
+  if (!isDefault(first, second)) {
+    return condition(first, second, third);
+  } else {
+    return true;
+  }
+}
+
+function filterCountry(country, houseCountry) {
+  return country === houseCountry;
+}
+
+function filterProperty(first, second) {
+  return first === second;
+}
+
+function filterPrice(maxPrice, minPrice, price) {
+  return price >= minPrice && price <= maxPrice;
+}
+
+function filterDate(startDate, endDate, date) {
+  return date >= startDate && date <= endDate && !isNaN(date);
+}
+
 const HouseContextProvider = ({ children }) => {
   //get all data from data.js
   const [houses, setHouses] = useState(housesData);
@@ -17,11 +64,7 @@ const HouseContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [date, setDate] = useState([], []);
 
-  useEffect(() => {
-    console.log("date 1",Date.parse(date));
-    console.log("date 2",Date.parse(date[1]));
-  }, [date]);
-
+ 
 
   useEffect(() => {
     const allCountries = houses.map(house => {
@@ -46,10 +89,10 @@ const HouseContextProvider = ({ children }) => {
   const handleClick = () => {
     setLoading(true);
     const isDefault = str => {
-      return str.split(" ").includes("All") ;
+      return str.split(" ").includes("All");
     };
-    const isDateDefault = str => {
-      return isNaN(str);
+    const isDateDefault = (startDate, endDate) => {
+      return isNaN(startDate) || isNaN(endDate);
     };
     //  1st Price as min and 2nd price as max
     const minPrice = parseInt(price.split(" ")[0]);
@@ -60,76 +103,40 @@ const HouseContextProvider = ({ children }) => {
     const newHouses = housesData.filter(house => {
       const housePrice = parseInt(house.price);
       const houseDate = Date.parse(house.date);
-      console.log("HOUSEDATE", house.id, houseDate);
+      // console.log("HOUSEDATE", house.id, houseDate);
       if (
-        house.country === country &&
-        house.type === property &&
-        housePrice >= minPrice &&
-        housePrice <= maxPrice &&
-        houseDate >= startDate &&
-        houseDate <= endDate && !isNaN(houseDate)
+        validCondition(
+          isDefault,
+          house.country,
+          country,
+          country,
+          filterCountry
+        ) &&
+        validCondition2(
+          isDefault,
+          maxPrice,
+          minPrice,
+          housePrice,
+          price,
+          filterPrice
+        ) &&
+        validDateCondition(
+          isDateDefault,
+          startDate,
+          endDate,
+          houseDate,
+          filterDate
+        ) &&
+        validCondition(
+          isDefault,
+          house.type,
+          property,
+          property,
+          filterProperty
+        )
       ) {
         return house;
       }
-      // all values are default
-      if (isDefault(country) && isDefault(property) && isDefault(price)   ) {
-        return house;
-      }
-      // country is not default
-      if (!isDefault(country) && isDefault(property) && isDefault(price) ) {
-        return house.country === country;
-      }
-      
-      // // property is not default
-      // if (!isDefault(property) && isDefault(country) && isDefault(price) && isDateDefault(date) ) {
-      //   return house.type === property;
-      // }
-      // // // date is not default
-      // if (!isDateDefault(date) && isDefault(country) && isDefault(property) && isDefault(price) ) {
-      //   if (houseDate >= startDate && houseDate <= endDate) {
-      //     return house;
-      //   }
-      // }
-      // // price is not default
-      // if (!isDefault(price) && isDefault(country) && isDefault(property) && isDateDefault(date)) {
-      //   if (housePrice >= minPrice && housePrice <= maxPrice) {
-      //     return house;
-      //   }
-      // }
-      // // country and property is not default
-      // if (!isDefault(country) && !isDefault(property) && isDefault(price) ) {
-      //   return house.country === country && house.type === property;
-      // }
-      // // country and date is not default
-      // if (!isDefault(country) && isDefault(property) && isDefault(price) && !isDateDefault(date)) {
-      //   if (houseDate >= startDate && houseDate <= endDate) {
-      //     return house.country === country;
-      //   }
-      // }
-      // // country and price is not default
-      // if (!isDefault(country) && isDefault(property) && !isDefault(price) ) {
-      //   if (housePrice >= minPrice && housePrice <= maxPrice) {
-      //     return house.country === country;
-      //   }
-      // }
-      // // property and price is not default
-      // if (isDefault(country) && !isDefault(property) && !isDefault(price) ) {
-      //   if (housePrice >= minPrice && housePrice <= maxPrice) {
-      //     return house.type === property;
-      //   }
-      // }
-      //  // property and date is not default
-      //  if (isDefault(country) && !isDefault(property) && isDefault(price) && !isDateDefault(date)) {
-      //   if (houseDate >= startDate && houseDate <= endDate) {
-      //     return house.type === property;
-      //   }
-      // }
-      //  // price and date is not default
-      //  if (isDefault(country) && isDefault(property) && !isDefault(price) && !isDateDefault(date)) {
-      //   if (houseDate >= startDate && houseDate <= endDate) {
-      //     return house;
-      //   }
-      // }
     });
 
     setTimeout(() => {

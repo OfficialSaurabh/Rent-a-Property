@@ -23,10 +23,10 @@ const ManagePropertyDropdown = () => {
   ];
 
   return (
-    <Menu as='div' className=' w-48 relative'>
+    <Menu as='div' className='  relative '>
       <Menu.Button
         onClick={() => setIsOpen(!isOpen)}
-        className='dropdown-btn w-full'
+        className='dropdown-btn px-2 w-48'
       >
         <div>
           <div className='text-sm text-gray-900 font-medium py-1 text-left '>Manage Property</div>
@@ -45,7 +45,7 @@ const ManagePropertyDropdown = () => {
               as='li'
             //   onClick={() => setPrice(price.value)}
               key={index}
-              className='cursor-pointer  hover:text-indigo-700 transition'
+              className='cursor-pointer  hover:text-purple-700 transition'
             >
               {property.value}
             </Menu.Item>

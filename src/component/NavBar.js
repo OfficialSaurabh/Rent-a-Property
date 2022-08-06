@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 // import { a } from "react-router-dom";
-import { BiBuildingHouse} from "react-icons/bi";
+import { BiBuildingHouse } from "react-icons/bi";
 import NavLinkDropdown from "./ManagePropertyDropdown";
- import ResourceDropdown from "./ResourceDropdown";
-
+import ResourceDropdown from "./ResourceDropdown";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,62 +14,58 @@ function NavBar() {
           <div className="flex h-16 items-center  justify-between ">
             <div className="flex items-center justify-end ">
               <div className="flex space-x-3">
-                < BiBuildingHouse className="h-8 w-8 text-purple-800" />
+                <BiBuildingHouse className="h-8 w-8 text-purple-800" />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold text-purple-900 ">
                   Rent a Property
                 </span>
               </div>
-              <div className="hidden md:block ">
+              <div className="hidden lg:hidden xl:block ">
                 <div className="ml-10 flex items-baseline justify-between space-x-5 text-gray-900 ">
-                  
-                    <a
-                      href="/"
-                      className=" rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700 "
-                    >
-                      Rent
-                    </a>
-                    <a
-                      href="/"
-                      className=" rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700 "
-                    >
-                      Buy
-                    </a>
-                    <a
-                      href="/"
-                      className=" rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700 "
-                    >
-                      Sell
-                    </a>
-                    <div>
+                  <a
+                    href="/"
+                    className=" rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700 "
+                  >
+                    Rent
+                  </a>
+                  <a
+                    href="/"
+                    className=" rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700 "
+                  >
+                    Buy
+                  </a>
+                  <a
+                    href="/"
+                    className=" rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700 "
+                  >
+                    Sell
+                  </a>
+                  <div>
                     <NavLinkDropdown />
-                    </div>
-                    <div>
-                    <ResourceDropdown/>
-                    </div>
-                   
-                    
-                 
+                  </div>
+                  <div>
+                    <ResourceDropdown />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="hidden md:block ">
-            <button
-              type="button"
-              className="mr-2 mb-2 rounded-lg outline outline-purple-400 outline-1 px-5 py-2.5 text-sm font-medium text-purple-700 hover:bg-purple-200  "
-            >
-              Login
-            </button>
-            <button
-              type="button"
-              className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
-            >
-              Sign Up
-            </button>
+            <div className="hidden lg:hidden xl:block ">
+              <button
+                type="button"
+                className="mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-purple-700 outline outline-1 outline-purple-400 hover:bg-purple-200  "
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
+              >
+                Sign Up
+              </button>
             </div>
 
             {/* Nav menu for small screen */}
 
-            <div className="-mr-2 flex md:hidden">
+            <div className="-mr-2 flex lg:block xl:hidden">
               <button
                 href="/"
                 onClick={() => setIsOpen(!isOpen)}
@@ -153,26 +148,26 @@ function NavBar() {
                 >
                   Sell
                 </a>
-                <a href="/">
-                    <NavLinkDropdown />
-                    </a>
-                    <a href="/">
-                    <ResourceDropdown/>
-                    </a>
+                <div>
+                  <NavLinkDropdown />
+                </div>
+                <div>
+                  <ResourceDropdown />
+                </div>
               </div>
-              <div className=" px-5  md:hidden  ">
-              <button
-              type="button"
-              className="mr-2 mb-2 rounded-lg outline outline-purple-400 outline-1 px-5 py-2.5 text-sm font-medium text-purple-700 hover:bg-purple-200  "
-            >
-              Login
-            </button>
-            <button
-              type="button"
-              className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
-            >
-              Sign Up
-            </button>
+              <div className=" px-5  lg:hidden  ">
+                <button
+                  type="button"
+                  className="mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-purple-700 outline outline-1 outline-purple-400 hover:bg-purple-200  "
+                >
+                  Login
+                </button>
+                <button
+                  type="button"
+                  className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
+                >
+                  Sign Up
+                </button>
               </div>
             </div>
           )}

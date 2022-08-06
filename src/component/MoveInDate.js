@@ -19,7 +19,7 @@ function Date() {
   // console.log(startDate, endDate)
 
   return (
-    <div className="dropdown-btn text-left">
+    <div className="dropdown-btn text-left xl:z-20 lg:z-20">
       <RiCalendarEventLine className="dropdown-icon-primary" />
       <div>
         <div className="py-1 text-sm font-medium text-gray-500 ">When</div>

@@ -15,18 +15,16 @@ const ResourceDropdown = () => {
       value: 'Rent resource',
     },
     {
-      value: '100000 - 130000',
+      value: 'EMI Claculator',
     },
-    {
-      value: '130000 - 160000',
-    },
+    
   ];
 
   return (
     <Menu as='div' className='w-full relative'>
       <Menu.Button
         onClick={() => setIsOpen(!isOpen)}
-        className='dropdown-btn w-full'
+        className='dropdown-btn px-2 '
       >
         <div>
           <div className='text-sm text-gray-900 font-medium py-1 text-left '>Resources</div>
@@ -45,7 +43,7 @@ const ResourceDropdown = () => {
               as='li'
             //   onClick={() => setPrice(price.value)}
               key={index}
-              className='cursor-pointer  hover:text-indigo-700 transition'
+              className='cursor-pointer  hover:text-purple-800 transition'
             >
               {resource.value}
             </Menu.Item>

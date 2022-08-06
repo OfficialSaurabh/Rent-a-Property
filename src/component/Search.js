@@ -20,21 +20,21 @@ const Search = () => {
           {" "}
           Search properties to rent
         </p>
-        <div className="relative divide-x  flex flex-col bg-white shadow-md  gap-4 rounded-lg px-8 py-2 lg:-top-4  lg:flex-row  lg:gap-x-3">
+        <div className="relative flex  flex-col gap-4 divide-x rounded-lg  bg-white py-2  shadow-md lg:-top-4 lg:flex-row  lg:gap-x-0  lg:px-0">
           <CountryDropdown />
-          <Date/>
+          <Date />
           <PriceRangeDropdown />
           <PropertyDropdown />
           <div className="flex justify-center ">
-          <button
-            onClick={() => {
-              handleClick();
-            }}
-            className=" h-16 w-full md:w-28  flex items-center justify-center rounded-lg bg-purple-700 text-lg text-white transition hover:bg-indigo-800 "
-          >
-            <p className=" px-2">Search</p>
-            <RiSearch2Line />
-          </button>
+            <button
+              onClick={() => {
+                handleClick();
+              }}
+              className=" mx-2 flex h-16 w-full  items-center justify-center rounded-lg bg-purple-700 text-lg text-white transition hover:bg-purple-900 md:w-28 "
+            >
+              <p className=" px-2">Search</p>
+              <RiSearch2Line />
+            </button>
           </div>
         </div>
       </div>
