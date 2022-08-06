@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-// import { a } from "react-router-dom";
 import { BiBuildingHouse } from "react-icons/bi";
 import NavLinkDropdown from "./ManagePropertyDropdown";
 import ResourceDropdown from "./ResourceDropdown";
@@ -68,7 +67,7 @@ function NavBar() {
             <div className="-mr-2 flex lg:block xl:hidden">
               <button
                 href="/"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => setIsOpen(oldState => !oldState)}
                 type="a"
                 className="inline-flex items-center justify-center rounded-md bg-purple-200 p-2 text-gray-900 hover:text-purple-700  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-white"
                 aria-controls="mobile-menu"

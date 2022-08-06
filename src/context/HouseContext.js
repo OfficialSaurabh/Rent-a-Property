@@ -100,7 +100,7 @@ const HouseContextProvider = ({ children }) => {
     const startDate = Date.parse(date[0]);
     const endDate = Date.parse(date[1]);
 
-    const newHouses = housesData.filter(house => {
+    const newHouses = housesData.filter(house =>{
       const housePrice = parseInt(house.price);
       const houseDate = Date.parse(house.date);
       // console.log("HOUSEDATE", house.id, houseDate);
