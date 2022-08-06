@@ -16,7 +16,7 @@ const Search = () => {
   return (
     <div className=" bg-gray-100">
       <div className="   mx-auto w-3/4">
-        <p className="py-7 text-4xl font-bold text-black">
+        <p className="py-7 sm:text-4xl text-2xl font-bold text-black">
           {" "}
           Search properties to rent
         </p>
