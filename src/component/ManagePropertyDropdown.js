@@ -23,10 +23,10 @@ const ManagePropertyDropdown = () => {
   ];
 
   return (
-    <Menu as='div' className='  relative '>
+    <Menu as='div' className=' w-full relative '>
       <Menu.Button
         onClick={() => setIsOpen(!isOpen)}
-        className='dropdown-btn px-2 w-48'
+        className=' flex  items-centerpx-3 py-2 '
       >
         <div>
           <div className='text-sm text-gray-900 font-medium py-1 text-left '>Manage Property</div>
@@ -38,7 +38,7 @@ const ManagePropertyDropdown = () => {
         )}
       </Menu.Button>
 
-      <Menu.Items className='dropdown-menu'>
+      <Menu.Items className='dropdown-menu w-48'>
         {manageProperty.map((property, index) => {
           return (
             <Menu.Item

@@ -24,7 +24,7 @@ const ResourceDropdown = () => {
     <Menu as='div' className='w-full relative'>
       <Menu.Button
         onClick={() => setIsOpen(!isOpen)}
-        className='dropdown-btn px-2 '
+        className=' flex  items-center py-2  '
       >
         <div>
           <div className='text-sm text-gray-900 font-medium py-1 text-left '>Resources</div>

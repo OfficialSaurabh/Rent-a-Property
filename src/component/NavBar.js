@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
 import { BiBuildingHouse } from "react-icons/bi";
 import NavLinkDropdown from "./ManagePropertyDropdown";
 import ResourceDropdown from "./ResourceDropdown";
@@ -18,15 +17,15 @@ function NavBar() {
                   Rent a Property
                 </span>
               </div>
-              <div className="md:hidden ">
+              <div className="md:hidden">
                 <button
-                  className="rounded-md p-2 text-gray-700 outline-none focus:border focus:border-gray-400"
+                  className="rounded-md p-2 text-gray-900 outline-none bg-purple-200 focus:border focus:border-purple-500"
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
+                      className="h-6 w-6 text-purple-800 "
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -39,7 +38,7 @@ function NavBar() {
                   ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
+                      className="h-6 w-6 text-purple-800"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -62,53 +61,53 @@ function NavBar() {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700">
-                <a
-                  href="/"
-                  className=" "
-                >
-                  Rent
-                </a>
+              <ul className="items-center justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
+                <li className="text-sm font-medium hover:bg-purple-200 hover:text-purple-700 rounded-md px-3 py-2">
+                  <a href="/">Rent</a>
                 </li>
-                <li className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700">
-                <a
-                  href="/"
-                  className=""
-                >
-                  Buy
-                </a>
+                <li className="text-sm font-medium hover:bg-purple-200 hover:text-purple-700 rounded-md px-3 py-2">
+                  <a href="/">Buy</a>
                 </li>
-                <li className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-200 hover:text-purple-700">
-                <a
-                  href="/"
-                  className=""
-                >
-                  Sell
-                </a>
+                <li className="text-sm font-medium hover:bg-purple-200 hover:text-purple-700 rounded-md px-3 py-2">
+                  <a href="/">Sell</a>
                 </li>
-                <li className="">
+                <li className=" px-3">
                 <NavLinkDropdown />
                 </li>
-                <li className="">
+                <li className="px-3">
                 <ResourceDropdown />
                 </li>
-                <li className="">
-                <button
-                  type="button"
-                  className="mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-purple-700 outline outline-1 outline-purple-400 hover:bg-purple-200  "
+              </ul>
+
+              <div className="mt-3 space-y-2 sm:inline-block md:hidden lg:hidden">
+                <a
+                  href="/"
+                  className="inline-block w-full rounded-md  px-4 py-2 text-center text-purple-700 outline outline-1 outline-purple-400 hover:bg-purple-200"
                 >
                   Login
-                </button>
-                <button
-                  type="button"
-                  className="mr-2 mb-2 rounded-lg bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700  "
+                </a>
+                <a
+                  href="/"
+                  className="inline-block w-full rounded-md bg-purple-700 px-4 py-2 text-center text-white shadow hover:bg-purple-800"
                 >
-                  Sign Up
-                </button>
-                </li>
-              </ul>
+                  Sign up
+                </a>
+              </div>
             </div>
+          </div>
+          <div className="hidden space-x-2 md:inline-block">
+            <a
+              href="/"
+              className="rounded-md px-4 py-2 text-purple-700 outline outline-1 outline-purple-400 hover:bg-purple-200"
+            >
+              Login
+            </a>
+            <a
+              href="/"
+              className="rounded-md bg-purple-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-700 "
+            >
+              Sign up
+            </a>
           </div>
         </div>
       </nav>

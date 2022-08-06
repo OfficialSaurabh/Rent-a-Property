@@ -20,7 +20,7 @@ function Date() {
 
   return (
     <div className="dropdown-btn text-left xl:z-20 lg:z-20">
-      <RiCalendarEventLine className="dropdown-icon-primary" />
+      <RiCalendarEventLine className="text-2xl text-purple-700 sm:mr-5 mr-1 " />
       <div>
         <div className="py-1 text-sm font-medium text-gray-500 ">When</div>
         <DatePicker
